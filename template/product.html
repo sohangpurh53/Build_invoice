@@ -1,0 +1,31 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/product.css">
+</head>
+<body class="bg">
+    <a href="{% url 'InvoiceHomepage' %}" class="button1">Dashboard</a>
+    <div class="product-box column-lg-4 colmn-md-6 colmn-sm-12">
+    
+
+    {% if messages %}
+    {% for message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+    {% endif %}
+    <div class="form_body" >
+    <form class="form" method="post"> 
+        {% csrf_token %}
+        {{pf|crispy }}
+        <div class="button"><button>Product</button></div>
+    </form>
+</div>
+</div>
+</body>
+</html>

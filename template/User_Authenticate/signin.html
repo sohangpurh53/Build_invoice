@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/signin.css">
+</head>
+<body>
+  <div class="h1"><h1> Login</h1></div>
+  <div class='login-box'> 
+  {% if messages %}
+  {% for message in messages %}
+    <h3>{{message}}</h3>
+  {% endfor %}
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+      <button>Login</button>
+        <a href='{% url 'SignUp' %}' class="register"> SignUp </a>  
+      
+      </form>
+  
+      
+  
+
+    </body>
+  </div>
+<!-- <body>
+  <div class="heading"><h1> Login</h1></div> 
+  <div class="login-page">
+
+  {% if messages %}
+  {% for message in messages %}
+    <h3>{{message}}</h3>
+  {% endfor %}
+  {% endif %}
+
+    
+  <form class="login-form" method="post">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <div class="button_class">
+      <button type="submit" class="btn btn-primary">SignIn</button>
+      <a href='{% url 'SignUp' %}' class="register_class">SignUp</a>
+    </div> 
+   </form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+      <button>Login</button>
+      </form> 
+      {% if user.is_authenticated%}
+      <a href="{% url 'SignUp' %}"><span><button class="button2">Register</button></span></a>
+      {% else %}
+      <a href='{% url 'SignUp' %}' class="register"> <button class="button2">Register</button></a>
+      {% endif %}
+    </div> 
+    </body> -->
+
+</html>
+
+
+
+
+
+
+

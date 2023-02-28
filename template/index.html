@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="/static/css/index.css">
+
+
+
+  <h1> Total Invoicec</h1>
+  <hr>
+  {% if messages %}
+  {% for message in messages %}
+  <h3>{{message}}</h3>
+  {% endfor %}
+  {% endif %}
+  {% if user.is_authenticated %}
+
+    <div class="div-container">
+  <div class="div-button column-lg-4 colmn-md-6 colmn-sm-12"><a href="{% url 'SignOut' %}"><button class="logout-button">Logout</button></a> </div>
+  
+
+  {% endif %}
+
+ 
+  <div class="div-button column-lg-4 colmn-md-6 colmn-sm-12"><a href="{% url 'invform' %}"><button class="button1">Invoice Form</button></a></div>
+  <div class="div-button column-lg-4 colmn-md-6 colmn-sm-12"><a href="{% url 'companydetail' %}"><button class="button1"> Add Company</button></a>
+  </div>
+  <div class="div-button column-lg-4 colmn-md-6 colmn-sm-12"><a href="{% url 'productdetail' %}" class="button1"> Add Product</a> </div>
+ </div>
+
+  <ul>
+    {% for invoiceData in invoiceData%}
+   <div class="container-button"> <li><a href="{% url 'index' invoiceData.id%}" class="invoicelink"> Invoices </a> <span>Name:</span>
+      <span> {{invoiceData.customer_name}} Invoice Number:</span> <span>{{invoiceData.invoice_number}}</span></li> <br> <br>
+    <div class="edit-div"><a class="edit-button" href="{% url 'invoice_edit' invoiceData.id%}">Edit Invoice</a></div>
+    <div class="delete-div"> <a class="delete-button" href="{% url 'invoice_delete' invoiceData.id %}">Delete Invoice</a></div> </div>
+      {% endfor %}
+
+  </ul>
+
+
+
+
+</body>
+
+</html>
