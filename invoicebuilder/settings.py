@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'invoice',
     'crispy_forms',
     'user',
-    'widget_tweaks',
     
     
     
