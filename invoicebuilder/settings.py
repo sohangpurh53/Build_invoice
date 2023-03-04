@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://invoice-builder.onrender.com']
+ALLOWED_HOSTS = ['invoice-builder.onrender.com']
 
 
 # Application definition
